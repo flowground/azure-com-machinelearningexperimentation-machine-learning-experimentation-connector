@@ -1,0 +1,58 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "accountName": {
+            "required": true,
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 50,
+            "pattern": "^[a-zA-Z0-9]*$"
+        },
+        "workspaceName": {
+            "required": true,
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 50,
+            "pattern": "^[a-zA-Z0-9]*$"
+        },
+        "requestBody": {
+            "description": "The parameters for updating a machine learning team account workspace.",
+            "properties": {
+                "properties": {
+                    "description": "The properties that the machine learning workspace will be updated with.",
+                    "x-ms-client-flatten": true,
+                    "properties": {
+                        "description": {
+                            "description": "Description for this workspace.",
+                            "type": "string"
+                        },
+                        "friendlyName": {
+                            "description": "Friendly name of this workspace.",
+                            "type": "string"
+                        }
+                    }
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "The resource tags for the machine learning team account workspace.",
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
